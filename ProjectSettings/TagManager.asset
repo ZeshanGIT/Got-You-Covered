@@ -8,6 +8,7 @@ TagManager:
   - RedPlayer
   - GreenPlayer
   - Boundary
+  - Enemy
   layers:
   - Default
   - TransparentFX
