@@ -10,10 +10,13 @@ public class PlayerMovement : MonoBehaviour
     Vector2 playerPos;
     Vector2 mousePos;
     Camera cam;
+    Dash dash;
+    bool isDashing = false;
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         activePlayer = GetComponent<ActivePlayer>();
+        dash = GameObject.Find("/Dash").GetComponent<Dash>();
         cam = Camera.main;
     }
 
@@ -28,14 +31,15 @@ public class PlayerMovement : MonoBehaviour
         playerPos = rigidbody2D.position;
         Vector3 tempMousePos = Input.mousePosition;
         mousePos = cam.ScreenToWorldPoint(new Vector3(tempMousePos.x, tempMousePos.y, 1));
+
+        isDashing = dash.isDashing;
+
     }
 
     void FixedUpdate()
     {
 
-
-
-        if (!isActive)
+        if (!isActive || isDashing)
         {
             rigidbody2D.velocity = Vector2.zero;
             return;

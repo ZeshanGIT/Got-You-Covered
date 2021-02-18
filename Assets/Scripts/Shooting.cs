@@ -20,17 +20,22 @@ public class Shooting : MonoBehaviour
         if (!activePlayer.isActive) return;
         if (Input.GetKey(KeyCode.Space) || Input.GetButton("Fire1"))
         {
-            if (timeLeft <= 0f)
-            {
-                GameObject gameObject = Instantiate(bullet, pointer.position, pointer.rotation);
-                Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
-                rb.AddForce(pointer.up * bulletForce, ForceMode2D.Impulse);
-                timeLeft = 1 - shootRate;
-            }
-            else
-            {
-                timeLeft -= Time.deltaTime;
-            }
+            Shoot();
+        }
+    }
+
+    public void Shoot()
+    {
+        if (timeLeft <= 0f)
+        {
+            GameObject gameObject = Instantiate(bullet, pointer.position, pointer.rotation);
+            Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+            rb.AddForce(pointer.up * bulletForce, ForceMode2D.Impulse);
+            timeLeft = 1 - shootRate;
+        }
+        else
+        {
+            timeLeft -= Time.deltaTime;
         }
     }
 }
