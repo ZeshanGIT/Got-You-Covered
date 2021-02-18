@@ -16,9 +16,11 @@ GameObject:
   - component: {fileID: 5018512223292789198}
   - component: {fileID: 5018512223292789197}
   - component: {fileID: 5018512223292789196}
+  - component: {fileID: 6283126766703762471}
+  - component: {fileID: 8906357698448186165}
   m_Layer: 8
-  m_Name: RedPlayer
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: GreenPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,6 +213,42 @@ MonoBehaviour:
   bullet: {fileID: 1321786854601188277, guid: 7bb605715875bb7409be6256b1c00f3d, type: 3}
   bulletForce: 2
   shootRate: 0.8
+--- !u!58 &6283126766703762471
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5018512223292789194}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3
+--- !u!250 &8906357698448186165
+PointEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5018512223292789194}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  m_ForceMagnitude: -0.01
+  m_ForceVariation: 0
+  m_DistanceScale: 1
+  m_ForceSource: 0
+  m_ForceTarget: 0
+  m_ForceMode: 1
+  m_Drag: 0
+  m_AngularDrag: 0
 --- !u!1 &5018512223306896573
 GameObject:
   m_ObjectHideFlags: 0
